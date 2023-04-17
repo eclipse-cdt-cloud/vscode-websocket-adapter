@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "WebSocket Debug",
+            "type": "websocket-debug",
+            "request": "attach",
+            "address": "ws://localhost:50001",
+            "pathMapping": {
+                "/home": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Raw Socket Debug (Desktop Only)",
+            "type": "websocket-debug",
+            "request": "attach",
+            "address": "50000",
+            "pathMapping": {
+                "/home": "${workspaceFolder}"
+            }
+        }
+    ]
+}

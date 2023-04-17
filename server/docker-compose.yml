@@ -1,0 +1,15 @@
+version: "3.4"
+services:
+  cdt:
+    build: .
+    command:
+      - /bin/sh
+      - -c
+      - |
+        websockify localhost:50001 localhost:50000 &
+        cdtDebugTargetAdapter --server=50000 --config-frozen='{"request": "launch", "program": "/home/hello"}'
+    ports:
+      - "50000:50000"
+      - "50001:50001"
+    volumes:
+      - ../test-workspace:/home

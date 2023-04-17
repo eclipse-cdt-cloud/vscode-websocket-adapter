@@ -1,0 +1,9 @@
+.github
+.vscode
+src
+.env
+*.vsix
+test-workspace
+server
+dist/**/*.js.map
+node_modules

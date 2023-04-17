@@ -1,0 +1,84 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        with:
+          node-version: 14.x
+      - name: Build
+        env:
+          GITHUB_TOKEN: ${{github.token}}
+        run: |
+          yarn install --ignore-scripts
+          yarn build
+          yarn package
+      - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce
+        with:
+          name: vsix-package
+          path: ./*.vsix
+          retention-days: 1
+
+  release:
+    needs: build
+    name: Create Release
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+      - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        with:
+          path: artifacts
+      - uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844
+        with:
+          files: artifacts/*/*.vsix
+
+  publish-open-vsx-registry:
+    needs: build
+    name: Open VSX
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+      - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        with:
+          path: artifacts
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        with:
+          node-version: 14.x
+      - name: Publish
+        run: |
+          npx ovsx@0.5.1 publish -i artifacts/*/*.vsix -p ${{secrets.OPEN_VSX_TOKEN}}
+
+  publish-vscode-marketplace:
+    needs: build
+    name: VS Code Marketplace
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
+      - uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a
+        with:
+          path: artifacts
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        with:
+          node-version: 14.x
+      - name: Publish
+        run: |
+          npx vsce publish -i artifacts/*/*.vsix -p ${{secrets.VS_MARKETPLACE_TOKEN}}
