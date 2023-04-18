@@ -10,6 +10,7 @@
   "browser": "dist/web-extension.js",
   "repository": "https://github.com/eclipse-cdt-cloud/vscode-websocket-adapter",
   "qna": "https://github.com/eclipse-cdt-cloud/vscode-websocket-adapter/issues",
+  "icon": "media/cdtcloud.png",
   "engines": {
     "vscode": "^1.77.0"
   },
