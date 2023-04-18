@@ -23,9 +23,3 @@ $ docker-compose up
 CDT-GDB-Adapter should be debugging `hello` and listening to a raw socket connection on `localhost:50000`
 
 A WebSocket proxy (using `websockify`) should be listening on `localhost:50001`
-
-### Client
-
-Open this project in VS Code and set some breakpoints in `hello.c`.
-
-Running one of the debug launch configurations should attach to the remote debuggger.

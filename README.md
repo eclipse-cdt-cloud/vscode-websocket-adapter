@@ -1,6 +1,6 @@
-# Websocket Debug Adapter
+# WebSocket Debug Adapter
 
-VS Code Debug Adapter for Websockets
+VS Code Debug Adapter for WebSockets
 
 ## Server
 
@@ -22,7 +22,7 @@ yarn serve
 
 And then side-load the extension (CTRL+P > Developer: Install Extension from Location...).
 
-Open the test-workspace folder and start the `Websocket` or `Raw Socket` debug session.
+Open the test-workspace folder and start the `WebSocket` or `Raw Socket` debug session.
 
 ## Architecture
 

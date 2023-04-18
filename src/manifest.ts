@@ -9,7 +9,7 @@
  *********************************************************************/
 
 export const PACKAGE_NAME = 'websocket-adapter';
-export const DISPLAY_NAME = 'Websocket Debug Adapter';
+export const DISPLAY_NAME = 'WebSocket Debug Adapter';
 export const DEBUG_TYPE = 'websocket-debug';
 export const CONFIG_LOGGING_VERBOSITY = 'loggingVerbosity';
 export const DEFAULT_LOGGING_VERBOSITY = 'warn';

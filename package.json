@@ -1,6 +1,6 @@
 {
   "name": "websocket-adapter",
-  "displayName": "Websocket Debug Adapter",
+  "displayName": "WebSocket Debug Adapter",
   "description": "Debugger for Arm Cortex-M based microcontrollers, development boards and debug probes, implementing the Microsoft Debug Adapter Protocol (DAP)",
   "version": "0.0.1",
   "publisher": "Eclipse",
@@ -63,7 +63,7 @@
     "debuggers": [
       {
         "type": "websocket-debug",
-        "label": "Websocket Debugger",
+        "label": "WebSocket Debugger",
         "languages": [
           "c",
           "cpp"
@@ -73,7 +73,7 @@
             "properties": {
               "address": {
                 "type": "string",
-                "description": "Websocket (ws://<host>:<port>) or socket (<host>:<port>) to connect to"
+                "description": "WebSocket (ws://<host>:<port>) or socket (<host>:<port>) to connect to"
               },
               "pathMapping": {
                 "type": "object",
@@ -85,7 +85,7 @@
       }
     ],
     "configuration": {
-      "title": "Websocket Debug",
+      "title": "WebSocket Debug",
       "properties": {
         "websocket-debug.loggingVerbosity": {
           "type": "string",
