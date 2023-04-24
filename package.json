@@ -37,19 +37,19 @@
     "websocket-stream": "^5.5.2"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.16.0",
     "@types/vscode": "^1.77.0",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "@vscode/debugadapter": "1.59.0",
     "@vscode/debugprotocol": "^1.59.0",
-    "@vscode/vsce": "^2.18.0",
+    "@vscode/vsce": "^2.19.0",
     "eslint": "^8.39.0",
     "serve": "^14.2.0",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4",
     "webpack": "^5.79.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.2"
   },
   "contributes": {
     "breakpoints": [
