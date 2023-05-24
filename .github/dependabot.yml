@@ -6,7 +6,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      
+    ignore:
+      - dependency-name: "@types/vscode"
+
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
