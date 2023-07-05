@@ -2,7 +2,7 @@
   "name": "websocket-adapter",
   "displayName": "WebSocket Debug Adapter",
   "description": "Debugger for Arm Cortex-M based microcontrollers, development boards and debug probes, implementing the Microsoft Debug Adapter Protocol (DAP)",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "eclipse-cdt",
   "author": "Rob Moran <rob.moran@arm.com>",
   "license": "EPL-2.0",
