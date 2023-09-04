@@ -45,7 +45,7 @@
     "@vscode/debugprotocol": "^1.63.0",
     "@vscode/vsce": "^2.20.1",
     "eslint": "^8.47.0",
-    "serve": "^14.2.0",
+    "serve": "^14.2.1",
     "ts-loader": "^9.4.4",
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
