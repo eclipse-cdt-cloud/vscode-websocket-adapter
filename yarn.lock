@@ -254,19 +254,14 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@vscode/debugadapter@1.61.0":
-  version "1.61.0"
-  resolved "https://registry.yarnpkg.com/@vscode/debugadapter/-/debugadapter-1.61.0.tgz#5e40595ee2e699b5fd447f3ea3c961a8e8573bc3"
-  integrity sha512-VDGLUFDVAdnftUebZe4uQCIFUbJ7rTc2Grps4D/CXl+qyzTZSQLv5VADEOZ6kBYG4SvlnMLql5vPQ0G6XvUCvQ==
+"@vscode/debugadapter@1.63.0":
+  version "1.63.0"
+  resolved "https://registry.yarnpkg.com/@vscode/debugadapter/-/debugadapter-1.63.0.tgz#d0ede205a1c4108170dcada497926d071c099553"
+  integrity sha512-d2eAnYCZkKJ0C28gT93KPi5YXFav8VyagcxkJ94LZ8qqgJ27+2ct26MOHGYKB8L25ZdDs8A4YmyJO32J0afhNQ==
   dependencies:
-    "@vscode/debugprotocol" "1.61.0"
+    "@vscode/debugprotocol" "1.63.0"
 
-"@vscode/debugprotocol@1.61.0":
-  version "1.61.0"
-  resolved "https://registry.yarnpkg.com/@vscode/debugprotocol/-/debugprotocol-1.61.0.tgz#82bbcaba5a925f1f58246c9f50b669855c9f23f9"
-  integrity sha512-K/kF27jIStVFqlmUaGc2u+Dj8IR7YdEiSqShWr7MWhDudqpAW7uu7XMwoFwjpuC9LSaVwJMIX7EFC5OJ/RmnDQ==
-
-"@vscode/debugprotocol@^1.63.0":
+"@vscode/debugprotocol@1.63.0", "@vscode/debugprotocol@^1.63.0":
   version "1.63.0"
   resolved "https://registry.yarnpkg.com/@vscode/debugprotocol/-/debugprotocol-1.63.0.tgz#f6d16c382765d2533e515939ac2857aa1ed7ba35"
   integrity sha512-7gewwv69pA7gcJUhtJsru5YN7E1AwwnlBrF5mJY4R/NGInOUqOYOWHlqQwG+4AXn0nXWbcn26MHgaGI9Q26SqA==
