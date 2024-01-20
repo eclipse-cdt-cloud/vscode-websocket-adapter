@@ -19,10 +19,7 @@ export enum Verbosity {
     debug = 4
 }
 
-export class Logger {
-    public static instance = new Logger();
-
-    protected outputChannel = vscode.window.createOutputChannel(manifest.DISPLAY_NAME);
+abstract class Logger {
     protected logVerbosity: Verbosity;
 
     protected constructor() {
@@ -34,10 +31,12 @@ export class Logger {
         });
     }
 
-    public getVerbosity(): Verbosity {
+    protected getVerbosity(): Verbosity {
         const config = vscode.workspace.getConfiguration(manifest.PACKAGE_NAME).get<string>(manifest.CONFIG_LOGGING_VERBOSITY) || manifest.DEFAULT_LOGGING_VERBOSITY;
         return Verbosity[config as keyof typeof Verbosity];
     }
+
+    protected abstract logMessage(message: string): void;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     public log(verbosity: Verbosity, message: string | any): void {
@@ -50,7 +49,7 @@ export class Logger {
         }
 
         if (verbosity <= this.logVerbosity) {
-            this.outputChannel.appendLine(message);
+            this.logMessage(message);
         }
     }
 
@@ -64,4 +63,17 @@ export class Logger {
     public debug = (message: string | any): void => this.log(Verbosity.debug, message);
 }
 
-export const logger = Logger.instance;
+class OutputChannelLogger extends Logger {
+    public static instance = new OutputChannelLogger();
+
+    protected outputChannel: vscode.OutputChannel | undefined;
+
+    protected override logMessage(message: string): void {
+        if (!this.outputChannel) {
+            this.outputChannel = vscode.window.createOutputChannel(manifest.DISPLAY_NAME);
+        }
+        this.outputChannel.appendLine(message);
+    }
+}
+
+export const logger = OutputChannelLogger.instance;
