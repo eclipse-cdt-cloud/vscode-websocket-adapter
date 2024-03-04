@@ -281,10 +281,15 @@
   dependencies:
     "@vscode/debugprotocol" "1.64.0"
 
-"@vscode/debugprotocol@1.64.0", "@vscode/debugprotocol@^1.64.0":
+"@vscode/debugprotocol@1.64.0":
   version "1.64.0"
   resolved "https://registry.yarnpkg.com/@vscode/debugprotocol/-/debugprotocol-1.64.0.tgz#f20d998b96474a8ca1aab868fcda08be38fa1f41"
   integrity sha512-Zhf3KvB+J04M4HPE2yCvEILGVtPixXUQMLBvx4QcAtjhc5lnwlZbbt80LCsZO2B+2BH8RMgVXk3QQ5DEzEne2Q==
+
+"@vscode/debugprotocol@^1.65.0":
+  version "1.65.0"
+  resolved "https://registry.yarnpkg.com/@vscode/debugprotocol/-/debugprotocol-1.65.0.tgz#304a9e0f4f2825a66db4647148d4b2ec6372f17e"
+  integrity sha512-ejerrPMBXzYms6Ks+Gb7cdXtdncmT0xwIKNsc0c/SxhEa0HVY5jdvLUegYE91p7CQJpCnXOD/r2CvViN8txLLA==
 
 "@vscode/vsce@^2.24.0":
   version "2.24.0"
