@@ -24,16 +24,20 @@ export class SocketDebugSession extends ProtocolServer {
     public constructor(address: string, protected pathMapping?: { [key: string]: string }) {
         super();
         if (WEBSOCKET_REGEX.test(address)) {
-            this.adapter = new WebSocketDebugAdapter(address);
+            this.adapter = new WebsocketDebugAdapter(address);
         } else {
             if (vscode.env.uiKind === vscode.UIKind.Web) {
-                throw new Error('Raw socket connections are not supported in the browser, use a WebSocket address');
+                throw new Error('Raw socket connections are not supported in the browser, use a websocket address');
             }
             this.adapter = new SocketDebugAdapter(address);
         }
         this.adapter.on('message', message => this.onMessage(message));
         this.adapter.on('error', (event: DebugProtocol.Event) => this.emit(event.event, event));
         this.adapter.on('close', (event: DebugProtocol.Event) => this.emit(event.event, event));
+    }
+
+    public dispose() {
+        this.adapter.stop();
     }
 
     protected async dispatchRequest(request: DebugProtocol.Request): Promise<void> {
@@ -118,7 +122,7 @@ class SocketDebugAdapter extends DebugAdapter {
     }
 }
 
-class WebSocketDebugAdapter extends DebugAdapter {
+class WebsocketDebugAdapter extends DebugAdapter {
     protected createStream(address: string): NodeJS.ReadWriteStream {
         return websocket(address, {
             handshakeTimeout: SOCKET_TIMEOUT
