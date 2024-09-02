@@ -388,17 +388,17 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.2.0.tgz#756641adb587851b5ccb3e095daf27ae581c8406"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@vscode/debugadapter@^1.66.0":
-  version "1.66.0"
-  resolved "https://registry.yarnpkg.com/@vscode/debugadapter/-/debugadapter-1.66.0.tgz#4e4be35b8b986c45785aeee419c5d57569c12323"
-  integrity sha512-U/m5l6igHtQ8rSMSKW9oWeco9ySPqGYjqW9NECGPGWZ/xnoYicpqUoXhGx3xUNsafrinzWvUWrSUL/Cdgj2V+w==
+"@vscode/debugadapter@^1.67.0":
+  version "1.67.0"
+  resolved "https://registry.yarnpkg.com/@vscode/debugadapter/-/debugadapter-1.67.0.tgz#26b9e2ed3ab7e4fccad4d3608677ed65da30bd39"
+  integrity sha512-AzCiKbRdOheHFaTJ2BVdfGuREIOhNEtMUVDv4lJqIPCfZ/60tXELvVSOFGG+6hNMiMaSrAcXP9sPSlZLZEsmLA==
   dependencies:
-    "@vscode/debugprotocol" "1.66.0"
+    "@vscode/debugprotocol" "1.67.0"
 
-"@vscode/debugprotocol@1.66.0", "@vscode/debugprotocol@^1.66.0":
-  version "1.66.0"
-  resolved "https://registry.yarnpkg.com/@vscode/debugprotocol/-/debugprotocol-1.66.0.tgz#e311ee7696053e7d7b0d30e13849688c2239f2a8"
-  integrity sha512-VGcRBLNL8QwHzwerSWOb60fy1FO7bdseZv6OkTS4opoP3xeyDX58i4/wAwakL2Y4P9NafN4VGrvlXSWIratmWA==
+"@vscode/debugprotocol@1.67.0", "@vscode/debugprotocol@^1.66.0":
+  version "1.67.0"
+  resolved "https://registry.yarnpkg.com/@vscode/debugprotocol/-/debugprotocol-1.67.0.tgz#cbeef6f9e8e4b5e9a30468faa6f42c96e4d42040"
+  integrity sha512-vTn5JwZ+LQy2QqT/wUD8Rlrb+7eLo5fsiKIxD5i0BZIuvdRbxTTfGU7+47PsorMrfBzozngIrocKCKS3OVnYyw==
 
 "@vscode/vsce-sign-alpine-arm64@2.0.2":
   version "2.0.2"
